@@ -1,7 +1,7 @@
 import { Button } from "./ui/button";
 import { ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
-// create cart button; placing random choosed number of items in the top right corner with relative/absolute 3.0.2
+
 function CartButton() {
   const numItemsInCart = 5;
 
