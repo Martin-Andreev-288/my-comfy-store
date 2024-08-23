@@ -1,7 +1,18 @@
 import { FeaturedProducts, Hero } from "@/components";
-// setup landing page. Create 5 different components, for now just the
-// structure. See ## Landing Components in the Readme to the right
+import { customFetch, type ProductsResponse } from "@/utils";
+import { useLoaderData, type LoaderFunction } from "react-router-dom";
+
+const url = "/products?featured=true";
+
+export const loader: LoaderFunction = async (): Promise<ProductsResponse> => {
+  const response = await customFetch<ProductsResponse>(url);
+  return { ...response.data };
+};
+
 function Landing() {
+  const result = useLoaderData() as ProductsResponse;
+  console.log(result);
+
   return (
     <>
       <Hero />
@@ -9,4 +20,5 @@ function Landing() {
     </>
   );
 }
+
 export default Landing;
