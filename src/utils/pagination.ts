@@ -3,10 +3,7 @@ type ConstructUrlParams = {
     search: string;
     pathname: string;
 };
-// Construct URL. Completing the pagination. The pagination already works.
-// The final goal is to add the selected page in the URL,
-// for example - if we are on page one, it must add page=1, if we are on page
-// 2, it must add page=2. Look at the app in right.
+
 export const constructUrl = ({
     pageNumber,
     search,
