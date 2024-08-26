@@ -18,10 +18,8 @@ function PaginationContainer() {
   const { pageCount, page } = meta.pagination;
 
   const { search, pathname } = useLocation();
-  console.log(search, pathname);
 
   const pages = Array.from({ length: pageCount }, (_, index) => index + 1);
-  console.log(pages);
 
   if (pageCount < 2) return null;
 
