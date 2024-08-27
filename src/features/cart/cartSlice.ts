@@ -20,11 +20,32 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState: getCartFromLocalStorage(),
     reducers: {
-        addItem: () => { },
+        addItem: (state, action: PayloadAction<CartItem>) => {
+            const newCartItem = action.payload;
+            const item = state.cartItems.find((i) => i.cartID === newCartItem.cartID);
+            if (item) {
+                item.amount += newCartItem.amount;
+            } else {
+                state.cartItems.push(newCartItem);
+            }
+            state.numItemsInCart += newCartItem.amount;
+            state.cartTotal += Number(newCartItem.price) * newCartItem.amount;
+            /* because these three lines of code will be repeated in multiple places,
+            we'll move them in calculate totals and we'll invoke them from there */
+            // state.tax = 0.1 * state.cartTotal;
+            // state.orderTotal = state.cartTotal + state.shipping + state.tax;
+            // localStorage.setItem('cart', JSON.stringify(state));
+            cartSlice.caseReducers.calculateTotals(state);
+            toast({ description: 'Item added to cart' });
+        },
         clearCart: () => { },
         removeItem: () => { },
         editItem: () => { },
-        calculateTotals: () => { },
+        calculateTotals: (state) => {
+            state.tax = 0.1 * state.cartTotal;
+            state.orderTotal = state.cartTotal + state.shipping + state.tax;
+            localStorage.setItem('cart', JSON.stringify(state));
+        },
     },
 });
 
