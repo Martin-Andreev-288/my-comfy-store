@@ -8,7 +8,8 @@ import {
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { SelectProductAmount, SelectProductColor } from "@/components";
+import { SelectProductColor, SelectProductAmount } from "@/components";
+import { Mode } from "@/components/SelectProductAmount";
 
 export const loader: LoaderFunction = async ({
   params,
@@ -65,7 +66,11 @@ const SingleProduct = () => {
             setProductColor={setProductColor}
           />
           {/* AMOUNT */}
-          <SelectProductAmount />
+          <SelectProductAmount
+            mode={Mode.SingleProduct}
+            amount={amount}
+            setAmount={setAmount}
+          />
           {/* CART BUTTON */}
           <Button size="lg" className="mt-10" onClick={addToCart}>
             Add to bag
@@ -74,5 +79,5 @@ const SingleProduct = () => {
       </div>
     </section>
   );
-};
+}; // below - export default SingleProduct;
 export default SingleProduct;
