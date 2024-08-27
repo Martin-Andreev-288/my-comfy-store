@@ -54,14 +54,16 @@ const SingleProduct = () => {
         <div>
           <h1 className="capitalize text-3xl font-bold">{title}</h1>
           <h4 className="text-xl mt-2">{company}</h4>
-          {/* Without inline-block, it colors the whole row. With inline-block,
-          it colors only the are around the price */}
           <p className="mt-3 text-md bg-muted inline-block p-2 rounded-md">
             {dollarsAmount}
           </p>
           <p className="mt-6 leading-8">{description}</p>
           {/* COLORS */}
-          <SelectProductColor />
+          <SelectProductColor
+            colors={colors}
+            productColor={productColor}
+            setProductColor={setProductColor}
+          />
           {/* AMOUNT */}
           <SelectProductAmount />
           {/* CART BUTTON */}
