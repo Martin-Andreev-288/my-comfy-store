@@ -93,5 +93,5 @@ const SingleProduct = () => {
       </div>
     </section>
   );
-}; // below - export default SingleProduct;
+};
 export default SingleProduct;
