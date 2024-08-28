@@ -16,8 +16,23 @@ import { useAppDispatch } from "@/hooks";
 import { AxiosResponse } from "axios";
 
 function Login() {
-  const loginAsGuestUser = () => {
-    console.log("guest user");
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const loginAsGuestUser = async (): Promise<void> => {
+    try {
+      const response: AxiosResponse = await customFetch.post("/auth/local", {
+        identifier: "test@test.com",
+        password: "secret",
+      });
+
+      const username = response.data.user.username;
+      const jwt = response.data.jwt;
+      dispatch(loginUser({ username, jwt }));
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+      toast({ description: "Login Failed" });
+    }
   };
   return (
     <section className="h-screen grid place-items-center">
