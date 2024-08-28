@@ -6,6 +6,12 @@ import { customFetch } from "@/utils";
 import { toast } from "@/components/ui/use-toast";
 import { AxiosError } from "axios";
 
+export const action: ActionFunction = async ({ request }): Promise<null> => {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+  return null;
+};
+
 function Register() {
   return (
     <section className="h-screen grid place-items-center">
@@ -14,7 +20,7 @@ function Register() {
           <CardTitle className="text-center">Register</CardTitle>
         </CardHeader>
         <CardContent>
-          <Form>
+          <Form method="post">
             <FormInput type="text" name="username" defaultValue="test" />
             <FormInput type="email" name="email" defaultValue="test@test.com" />
             <FormInput type="password" name="password" defaultValue="secret" />
