@@ -1,23 +1,27 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
-import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "@/hooks";
+
+import { logoutUser } from "../features/user/userSlice";
+import { clearCart } from "../features/cart/cartSlice";
+import { useToast } from "./ui/use-toast";
 
 function Header() {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
-
-  // temporary state
-  const [user, setUser] = useState<{ username: string } | null>({
-    username: "demo user",
-  });
+  const { toast } = useToast();
+  const user = useAppSelector((state) => state.userState.user);
 
   const handleLogout = () => {
+    dispatch(clearCart());
+    dispatch(logoutUser());
+    toast({ description: "Logged out" });
     navigate("/");
-    setUser(null);
   };
 
   return (
     <header>
-      <div className="align-element flex justify-center sm:justify-end py-4">
+      <div className="align-element flex justify-center sm:justify-end py-2">
         {/* USER */}
         {user ? (
           <div className="flex gap-x-2 sm:gap-x-8 items-center">
