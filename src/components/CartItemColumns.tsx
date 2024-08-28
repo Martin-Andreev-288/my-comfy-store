@@ -5,9 +5,22 @@ import { editItem, removeItem } from "@/features/cart/cartSlice";
 import SelectProductAmount from "./SelectProductAmount";
 import { Mode } from "./SelectProductAmount";
 
-export const FirstColumn = () => {
-  return <h4>First Column</h4>;
+export const FirstColumn = ({
+  image,
+  title,
+}: {
+  image: string;
+  title: string;
+}) => {
+  return (
+    <img
+      src={image}
+      alt={title}
+      className="h-24 w-24 rounded-lg sm:h-32 sm:w-32 object-cover"
+    />
+  );
 };
+
 export const SecondColumn = () => {
   return <h4>Second Column</h4>;
 };
