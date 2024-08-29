@@ -39,9 +39,17 @@ export const loader =
   };
 
 function Orders() {
-  const { meta, data } = useLoaderData() as OrdersResponse;
-  console.log(data);
+  const { meta } = useLoaderData() as OrdersResponse;
+  if (meta.pagination.total < 1) {
+    return <SectionTitle text="Please make an order" />;
+  }
 
-  return <h1 className="text-4xl">Orders Page</h1>;
+  return (
+    <>
+      <SectionTitle text="Your Orders" />
+      <OrdersList />
+      <ComplexPaginationContainer />
+    </>
+  );
 }
 export default Orders;
