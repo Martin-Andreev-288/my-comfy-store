@@ -79,7 +79,7 @@ export type Checkout = {
     cartItems: CartItem[];
     numItemsInCart: number;
 };
-// setup OrdersResponse type, no need to screenshot something else
+
 export type Order = {
     id: number;
     attributes: {
