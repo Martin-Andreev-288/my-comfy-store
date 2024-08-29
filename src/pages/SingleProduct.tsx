@@ -1,7 +1,6 @@
 import { useLoaderData } from "react-router-dom";
-import { Link, type LoaderFunction } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
-  customFetch,
   formatAsDollars,
   type SingleProductResponse,
   type CartItem,
@@ -14,15 +13,6 @@ import { Mode } from "@/components/SelectProductAmount";
 import { useAppDispatch } from "@/hooks";
 import { addItem } from "@/features/cart/cartSlice";
 
-export const loader: LoaderFunction = async ({
-  params,
-}): Promise<SingleProductResponse> => {
-  const response = await customFetch<SingleProductResponse>(
-    `/products/${params.id}`
-  );
-
-  return { ...response.data };
-};
 const SingleProduct = () => {
   const { data: product } = useLoaderData() as SingleProductResponse;
   const { image, title, price, description, colors, company } =

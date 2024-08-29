@@ -13,11 +13,11 @@ import {
   Orders,
 } from "./pages";
 import { ErrorElement } from "./components";
-import { loader as landingLoader } from "./pages/Landing";
-import { loader as productsLoader } from "./pages/Products";
-import { loader as singlePageLoader } from "./pages/SingleProduct";
-import { loader as checkoutLoader } from "./pages/Checkout";
-import { loader as ordersLoader } from "./pages/Orders";
+import { loader as landingLoader } from "./pages/loaders/landingLoader";
+import { loader as productsLoader } from "./pages/loaders/productsLoader";
+import { loader as singlePageLoader } from "./pages/loaders/singleProductLoader";
+import { loader as checkoutLoader } from "./pages/loaders/checkoutLoader";
+import { loader as ordersLoader } from "./pages/loaders/ordersLoader";
 
 // actions
 import { action as registerAction } from "./pages/Register";
