@@ -20,8 +20,8 @@ import { loader as checkoutLoader } from "./pages/loaders/checkoutLoader";
 import { loader as ordersLoader } from "./pages/loaders/ordersLoader";
 
 // actions
-import { action as registerAction } from "./pages/Register";
-import { action as loginAction } from "./pages/Login";
+import { action as registerAction } from "./pages/loaders/registerLoader";
+import { action as loginAction } from "./pages/loaders/loginLoader";
 import { action as checkoutAction } from "./components/CheckoutForm";
 
 import { store } from "./store";

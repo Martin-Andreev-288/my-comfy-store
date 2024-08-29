@@ -6,6 +6,7 @@ import { toast } from "@/components/ui/use-toast";
 import { clearCart } from "../features/cart/cartSlice";
 import { ReduxStore } from "@/store";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const action =
   (store: ReduxStore): ActionFunction =>
   async ({ request }): Promise<null | Response> => {
