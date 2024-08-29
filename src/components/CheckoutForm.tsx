@@ -8,8 +8,51 @@ import { ReduxStore } from "@/store";
 
 export const action =
   (store: ReduxStore): ActionFunction =>
-  async ({ request }): Promise<null> => {
-    return null;
+  async ({ request }): Promise<null | Response> => {
+    const formData = await request.formData();
+    const name = formData.get("name") as string;
+    const address = formData.get("address") as string;
+
+    if (!name || !address) {
+      toast({ description: "please fill out all fields" });
+      return null;
+    }
+
+    const user = store.getState().userState.user;
+    if (!user) {
+      toast({ description: "please login to place an order" });
+      return redirect("/login");
+    }
+
+    const { cartItems, orderTotal, numItemsInCart } =
+      store.getState().cartState;
+
+    const info: Checkout = {
+      name,
+      address,
+      chargeTotal: orderTotal,
+      orderTotal: formatAsDollars(orderTotal),
+      cartItems,
+      numItemsInCart,
+    };
+    try {
+      const result = await customFetch.post(
+        "/orders",
+        { data: info },
+        {
+          headers: {
+            Authorization: `Bearer ${user.jwt}`,
+          },
+        }
+      );
+      console.log(result);
+      store.dispatch(clearCart());
+      toast({ description: "order placed" });
+      return redirect("/orders");
+    } catch (error) {
+      toast({ description: "order failed" });
+      return null;
+    }
   };
 
 function CheckoutForm() {
