@@ -50,6 +50,7 @@ export const action =
       toast({ description: "order placed" });
       return redirect("/orders");
     } catch (error) {
+      console.log(error);
       toast({ description: "order failed" });
       return null;
     }

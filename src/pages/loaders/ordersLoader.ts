@@ -28,6 +28,7 @@ export const loader =
 
                 return { ...response.data };
             } catch (error) {
+                console.log(error);
                 toast({ description: "Failed to fetch orders" });
                 return null;
             }

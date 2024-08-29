@@ -30,6 +30,7 @@ export const action =
       store.dispatch(loginUser({ username, jwt }));
       return redirect("/");
     } catch (error) {
+      console.log(error);
       toast({ description: "Login Failed" });
       return null;
     }
