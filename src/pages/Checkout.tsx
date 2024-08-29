@@ -6,8 +6,12 @@ import { type ReduxStore } from "@/store";
 
 export const loader =
   (store: ReduxStore): LoaderFunction =>
-  async (): Promise<null> => {
-    console.log(store);
+  async (): Promise<Response | null> => {
+    const user = store.getState().userState.user;
+    if (!user) {
+      toast({ description: "Please login to continue" });
+      return redirect("/login");
+    }
 
     return null;
   };
