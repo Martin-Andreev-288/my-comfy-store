@@ -9,10 +9,10 @@ function About() {
       </h1>
 
       <p className="mt-6 text-lg tracking-wide leading-8 max-w-2xl mx-auto">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic veniam
-        odit, officiis eos mollitia alias, doloremque, aspernatur ratione
-        asperiores voluptas labore minus dolores reprehenderit corporis quos.
-        Assumenda molestias harum dignissimos?
+        At Comfy Store, we offer a curated selection of household products
+        designed to enhance your living space. From stylish lamps to cozy sofas,
+        our mission is to bring comfort and elegance to every home. Discover the
+        perfect pieces to create your ideal sanctuary.
       </p>
     </section>
   );

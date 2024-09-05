@@ -7,14 +7,14 @@ const Hero = () => {
     <section className=" grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
       <div>
         <h1 className="max-w-2xl text-4xl font-bold tracking-tight  sm:text-6xl ">
-          We’re changing the way people shop.
+          Transforming Your Home Experience
         </h1>
 
         <p className="mt-8 max-w-xl text-lg leading-8">
-          Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
-          cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat
-          aliqua. Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-          qui lorem cupidatat commodo.
+          Welcome to Comfy Store, where comfort meets style. Explore our range
+          of household products, from elegant lamps to cozy sofas, designed to
+          transform your living space. Start your journey to a more comfortable
+          home today.
         </p>
 
         <Button asChild size="lg" className="mt-10">
