@@ -4,7 +4,7 @@ import {
   type ProductsResponse,
   type ProductsResponseWithParams,
 } from "../utils";
-import { type LoaderFunction } from "react-router-dom";
+import { type LoaderFunction } from "react-router";
 
 const url = "/products";
 

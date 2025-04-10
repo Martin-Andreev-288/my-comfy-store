@@ -1,4 +1,4 @@
-import { useRouteError, Link, isRouteErrorResponse } from "react-router-dom";
+import { useRouteError, Link, isRouteErrorResponse } from "react-router";
 import { Button } from "@/components/ui/button";
 
 function Error() {

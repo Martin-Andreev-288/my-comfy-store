@@ -1,4 +1,4 @@
-import { LoaderFunction, redirect, useLoaderData } from "react-router-dom";
+import { LoaderFunction, redirect, useLoaderData } from "react-router";
 import { toast } from "@/components/ui/use-toast";
 import { customFetch } from "@/utils";
 import {

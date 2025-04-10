@@ -1,5 +1,5 @@
-import { useLoaderData } from "react-router-dom";
-import { Link, type LoaderFunction } from "react-router-dom";
+import { useLoaderData } from "react-router";
+import { Link, type LoaderFunction } from "react-router";
 import {
   customFetch,
   formatAsDollars,

@@ -13,7 +13,7 @@ import {
   type OrdersResponse,
 } from "@/utils";
 
-import { useLoaderData, useLocation } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router";
 
 function ComplexPaginationContainer() {
   const { meta } = useLoaderData() as OrdersResponse;

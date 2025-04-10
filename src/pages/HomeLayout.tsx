@@ -1,4 +1,4 @@
-import { Outlet, useNavigation } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router";
 import { Header, Navbar, Loading } from "@/components";
 
 function HomeLayout() {

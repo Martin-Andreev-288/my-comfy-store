@@ -1,5 +1,5 @@
 import { formatAsDollars, type ProductsResponse } from "@/utils";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router";
 import { Card, CardContent } from "./ui/card";
 
 const ProductList = () => {

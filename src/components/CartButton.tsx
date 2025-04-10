@@ -1,6 +1,6 @@
 import { Button } from "./ui/button";
 import { ShoppingCart } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { useAppSelector } from "@/hooks";
 
 function CartButton() {

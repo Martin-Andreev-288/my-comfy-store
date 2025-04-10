@@ -1,5 +1,5 @@
 import { links } from "@/utils";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 import { useAppSelector } from "@/hooks";
 
 function NavLinks() {

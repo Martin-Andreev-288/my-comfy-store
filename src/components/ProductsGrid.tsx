@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router";
 import { Card, CardContent } from "@/components/ui/card";
 import { formatAsDollars, type ProductsResponse } from "@/utils";
 

@@ -1,5 +1,5 @@
 import { Armchair } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 function Logo() {
   return (

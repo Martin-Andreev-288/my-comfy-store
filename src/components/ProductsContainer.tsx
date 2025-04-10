@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router";
 import ProductsGrid from "./ProductsGrid";
 import ProductsList from "./ProductsList";
 import { useState } from "react";
