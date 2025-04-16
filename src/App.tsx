@@ -13,16 +13,16 @@ import {
   Orders,
 } from "./pages";
 import { ErrorElement } from "./components";
-import { loader as landingLoader } from "./pages/Landing";
-import { loader as productsLoader } from "./pages/Products";
-import { loader as singlePageLoader } from "./pages/SingleProduct";
-import { loader as checkoutLoader } from "./pages/Checkout";
-import { loader as ordersLoader } from "./pages/Orders";
+import { loader as landingLoader } from "./pages/landing/Landing";
+import { loader as productsLoader } from "./pages/products/Products";
+import { loader as singlePageLoader } from "./pages/singleProduct/SingleProduct";
+import { loader as checkoutLoader } from "./pages/checkout/Checkout";
+import { loader as ordersLoader } from "./pages/orders/Orders";
 
 // actions
-import { action as registerAction } from "./pages/Register";
-import { action as loginAction } from "./pages/Login";
-import { action as checkoutAction } from "./components/CheckoutForm";
+import { action as registerAction } from "./pages/register/Register";
+import { action as loginAction } from "./pages/login/Login";
+import { action as checkoutAction } from "./components/checkoutForm/CheckoutForm";
 
 import { store } from "./store";
 
