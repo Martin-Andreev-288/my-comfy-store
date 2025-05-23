@@ -6,14 +6,17 @@
 Welcome to the Comfy Store app! This app allows users to browse and purchase household products with ease.
 
 ## Technologies Used
+- React 18
 - TypeScript
-- React
-- Redux
-- HTML
 - Tailwind CSS
 - Shadcn/ui
+- Redux toolkit
+- React-router
+- Vitest
+- React Testing Library
+- Axios
+- Lucide-react
 - ESLint
-- git
 
 ## How to Run the Project
 1. Install the packages
@@ -25,6 +28,13 @@ npm install
 npm run dev
 ```
 
+## Running Tests
+
+To run unit and integration tests, you can use the following command:
+
+```
+npm run test
+```
 
 ### Usage
 
@@ -56,3 +66,14 @@ npm run dev
 - **Orders Page**
 <br />The Orders Page is also exclusive to registered and logged-in users. This page provides a comprehensive and user-friendly list of all the user’s past orders, including detailed information about each purchase. Users can easily review their order history and access important details such as order dates, items purchased, and delivery information. The Orders Page ensures that users have all the information they need at their fingertips, enhancing their overall shopping experience.
 <img src="./src/assets/ordersPage.png"/>
+
+## Test Account:
+
+- email: whitedove@gmail.com
+- password: 123456
+
+## Project Tool Links
+
+- [GitHub Link](https://github.com/Martin-Andreev-288/my-comfy-store)
+- [Project Deploy Link](https://my-comfy-store.vercel.app/)
+- [Demo Video](https://youtu.be/X7VBkZhS4us)
